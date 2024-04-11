@@ -16,6 +16,15 @@ $ npm -v
 Finally…
 Don’t forget to run `npm install` from the terminal of your project folder to install all necessary project dependencies.
 
+To test file(.js) with Eslint:
+```
+npx eslint filename.js
+```
+To fix:
+```
+npx eslint  --fix filename.js
+```
+
 # Tasks 
 ## 0. Keep every promise you make and only make promises you can keep
 Return a Promise using this prototype `function getResponseFromAPI()`
