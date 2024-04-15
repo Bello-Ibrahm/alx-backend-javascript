@@ -1,4 +1,4 @@
-const getStudentIdsSum  = (arrList) => {
+const getStudentIdsSum = (arrList) => {
   const idsSum = arrList.reduce(
     (acc, value) => acc + value.id, 0,
   );
