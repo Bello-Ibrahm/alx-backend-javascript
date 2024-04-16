@@ -21,13 +21,26 @@
  * with updated grades.
  * If `students` or `newGrades` are not arrays, the function returns an empty array.
  */
-export default function updateStudentGradeByCity(students, city, newGrades) {
-  if (Array.isArray(students) || Array.isArray(newGrades)) {
-    const cityStudents = students.filter((student) => student.location === city).map((student) => {
-      const item2 = newGrades.find((student2) => student.id === student2.studentId);
-      return { ...student, grade: item2 ? item2.grade : 'N/A' };
-    });
-    return cityStudents;
-  }
-  return [];
-}
+const updateStudentGradeByCity = (students, city, newGrades) => {
+  const filterStudents = students.filter(
+    (student) => student.location === city,
+  );
+
+  const gradeStudents = filterStudents.map(
+    (student) => {
+      for (const gradeInfo of newGrades) {
+        if (student.id === gradeInfo.studentId) {
+          student.grade = gradeInfo.grade; // eslint-disable-line no-param-reassign
+        }
+      }
+      if (student.grade === undefined) {
+        student.grade = 'N/A'; // eslint-disable-line no-param-reassign
+      }
+      return student;
+    },
+  );
+
+  return gradeStudents;
+};
+
+export default updateStudentGradeByCity;
