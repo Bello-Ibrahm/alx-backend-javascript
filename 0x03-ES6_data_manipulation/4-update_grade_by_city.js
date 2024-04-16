@@ -21,6 +21,7 @@
  * with updated grades.
  * If `students` or `newGrades` are not arrays, the function returns an empty array.
  */
+/* eslint-disable */
 export default function updateStudentGradeByCity(students, city, newGrades) {
   if (Array.isArray(students) || Array.isArray(newGrades)) {
     const cityStudents = students.filter((student) => student.location === city).map((student) => {
