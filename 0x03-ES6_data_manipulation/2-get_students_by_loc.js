@@ -14,6 +14,8 @@
  * @returns {Array} - An array of student objects located in the specified city.
  * If no students are located in the specified city, an empty array is returned.
  */
-export default function getStudentsByLocation(student, city) {
-  return student.filter((item) => item.location === city);
+function getStudentsByLocation(students, city) {
+  return students.filter((student) => student.location === city);
 }
+
+export default getStudentsByLocation;
