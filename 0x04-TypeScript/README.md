@@ -34,5 +34,9 @@ To fix:
 ```
 npx eslint  --fix filename.js
 ```
+To compile Typescript file:
+```
+tsc filename.ts
+```
 
 # Tasks 
